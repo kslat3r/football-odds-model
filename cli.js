@@ -55,14 +55,14 @@ co(function* () {
   console.log('Cashflow');
   console.log(data.cashflow);
   console.log('--');
-  console.log('Total bets %s' , data.totalBets);
-  console.log('Total stake £%s' , numeral(data.totalStake).format('0,0.00'));
+  console.log('Total bets %s' , data.bets);
+  console.log('Total stake £%s' , numeral(data.stake).format('0,0.00'));
   console.log('--');
-  console.log('Losses £%s', numeral(data.totalLosses).format('0,0.00'));
-  console.log('Winnings £%s' , numeral(data.totalWinnings).format('0,0.00'));
+  console.log('Losses £%s', numeral(data.lost).format('0,0.00'));
+  console.log('Winnings £%s' , numeral(data.won).format('0,0.00'));
   console.log('--');
-  console.log('Net profit/loss £%s', numeral(data.totalWinnings - data.totalLosses).format('0,0.00'));
-  console.log('Total profit/loss £%s', numeral(data.totalWinnings - data.totalStake).format('0,0.00'));
+  console.log('Net profit/loss £%s', numeral(data.won - data.lost).format('0,0.00'));
+  console.log('Total profit/loss £%s', numeral(data.won - data.stake).format('0,0.00'));
 
   process.exit();
 })
