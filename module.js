@@ -15,7 +15,7 @@ module.exports = {
       var seasons = yield this.getSeasons();
 
       var files = seasons.map(function(file) {
-        return './data/' + file + '.csv';
+        return __dirname + '/data/' + file + '.csv';
       });
 
       var fileData = yield csv.read({
@@ -43,7 +43,7 @@ module.exports = {
 
   getSeasons: function* () {
     try {
-      var files = yield file.readDir('./data');
+      var files = yield file.readDir(__dirname + '/data');
 
       return files.map(function(file) {
         return file.replace(/.csv/, '');
@@ -57,7 +57,7 @@ module.exports = {
   run: function* (opts) {
     try {
       opts.args = opts.seasons.map(function(season) {
-        return './data/' + season + '.csv';
+        return __dirname + '/data/' + season + '.csv';
       });
 
       var out = yield csv.read(opts);
