@@ -1,1 +1,1 @@
-module === require.main ? require('./cli') : require('./module');
+module.exports = (module === require.main ? require('./cli') : require('./module'));
