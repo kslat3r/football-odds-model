@@ -74,7 +74,7 @@ module.exports = {
   }
 };
 
-co(function* () {
+/*co(function* () {
   var seasons = yield module.exports.getSeasons(),
     season = seasons[0];
 
@@ -91,5 +91,4 @@ co(function* () {
 .catch(function(e) {
   console.log(e);
   console.log(e.stack);
-});
-
+});*/
