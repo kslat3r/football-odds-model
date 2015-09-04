@@ -1,0 +1,24 @@
+{
+  "name": "football-odds-model",
+  "version": "1.0.0",
+  "description": "Football Odds Model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://newlinelabs@bitbucket.org/newlinelabs/football-odds-model.git"
+  },
+  "author": "Ed Kelly",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/newlinelabs/football-odds-model#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "commander": "^2.8.1",
+    "node-csv": "^0.1.2",
+    "numeral": "^1.5.3",
+    "q": "^1.4.1",
+    "underscore": "^1.8.3"
+  }
+}
