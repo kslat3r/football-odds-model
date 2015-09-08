@@ -1,3 +1,4 @@
+var co = require('co');
 var file = require('./lib/file');
 var csv = require('./lib/csv');
 var validator = require('./lib/validator');
@@ -53,6 +54,20 @@ module.exports = {
     }
   },
 
+  getLeagues: function* () {
+    try {
+      var files = yield file.readDir(__dirname + '/data');
+
+      return files.map(function(file) {
+        var leagueAndSeason = file.replace(/.csv/, '');
+        return leagueAndSeason.split('-')[1];
+      });
+    }
+    catch (e) {
+      throw e;
+    }
+  },
+
   run: function* (opts) {
     try {
       opts.args = opts.seasons.map(function(season) {
@@ -72,3 +87,22 @@ module.exports = {
     }
   }
 };
+
+/*co(function* () {
+  var seasons = yield module.exports.getSeasons(),
+    season = seasons[0];
+
+  var results = yield module.exports.run({
+    seasons: [season],
+    provider: 'WH',
+    bet: 10,
+    streak: 2,
+    maxOdds: 2
+  });
+
+  console.log(results);
+})
+.catch(function(e) {
+  console.log(e);
+  console.log(e.stack);
+});*/
