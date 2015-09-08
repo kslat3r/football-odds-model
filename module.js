@@ -60,6 +60,20 @@ module.exports = {
 
       return files.map(function(file) {
         var leagueAndSeason = file.replace(/.csv/, '');
+        return leagueAndSeason.split('-')[0];
+      });
+    }
+    catch (e) {
+      throw e;
+    }
+  },
+
+  getYears: function* () {
+    try {
+      var files = yield file.readDir(__dirname + '/data');
+
+      return files.map(function(file) {
+        var leagueAndSeason = file.replace(/.csv/, '');
         return leagueAndSeason.split('-')[1];
       });
     }
