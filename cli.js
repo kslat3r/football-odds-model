@@ -61,8 +61,8 @@ co(function* () {
   console.log('Losses £%s', numeral(data.lost).format('0,0.00'));
   console.log('Winnings £%s' , numeral(data.won).format('0,0.00'));
   console.log('--');
-  console.log('Net profit/loss £%s', numeral(data.won - data.lost).format('0,0.00'));
-  console.log('Total profit/loss £%s', numeral(data.won - data.stake).format('0,0.00'));
+  console.log('Profit/loss £%s', numeral(data.won - data.stake).format('0,0.00'));
+  console.log('Percentage %s', ((data.won - data.stake) / data.stake) * 100);
 
   process.exit();
 })
